@@ -1,0 +1,33 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "This is my test work on MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BohdanKorolev/Blog.git"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcrypt": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "jsonwebtoken": "*"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BohdanKorolev/Blog/issues"
+  },
+  "homepage": "https://github.com/BohdanKorolev/Blog#readme"
+}
