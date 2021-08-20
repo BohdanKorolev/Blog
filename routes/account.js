@@ -13,11 +13,11 @@ router.post('/reg', (request, response) => {
         login: request.body.login,
         password: request.body.password,
     });
-    User.addUser(newUser, (err, res) => {
+    User.addUser(newUser, (err, user) => {
         if (err) {
-            res.json({success: false, msg: 'User has not been added.'});
+            response.json({success: false, msg: 'User has not been added.'});
         } else {
-            res.json({success: true, msg: 'User has been added.'})
+            response.json({success: true, msg: 'User has been added.'})
         }
     })
 })
