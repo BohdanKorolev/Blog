@@ -30,13 +30,13 @@ router.post('/auth', (request, response) => {
         if (!user) {
             return response.json({success: false, msg: 'This user was not found.'})
         }
-        User.comparePassword(password, user.password, (err, isMatch) => {
+        User.comparePassword(pass, user.password, (err, isMatch) => {
             if (err) throw err;
             if (isMatch) {
                 const token = jwt.sign(user.toJSON(), config.secret, {
                     expiresIn: 3600 * 24
                 });
-                res.json({
+                response.json({
                     success: true,
                     token: 'JWT' + token,
                     user: {
