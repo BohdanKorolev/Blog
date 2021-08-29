@@ -4,7 +4,6 @@ const User = require('../models/user');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../configs/db');
-const {log} = require("nodemon/lib/utils");
 
 router.post('/reg', (request, response) => {
     let newUser = new User({

@@ -6,6 +6,7 @@ const passport = require('passport');
 const path = require('path');
 const config = require('./configs/db');
 const account = require('./routes/account');
+const category = require('./routes/category');
 
 const app = express();
 const port = 3000;
@@ -28,6 +29,8 @@ app.use(cors());
 app.use(bodyparser.json());
 
 app.use('/account', account);
+
+app.use('/category', category);
 
 app.get('/', (request, response) => {
     response.send('Home page')

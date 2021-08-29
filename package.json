@@ -12,14 +12,15 @@
     "url": "git+https://github.com/BohdanKorolev/Blog.git"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcrypt": "*",
-    "passport": "*",
-    "passport-jwt": "*",
     "body-parser": "*",
     "cors": "*",
-    "jsonwebtoken": "*"
+    "express": "*",
+    "jquery": "^3.6.0",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
