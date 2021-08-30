@@ -16,6 +16,10 @@ module.exports.addCategory = (newCategory, callback) => {
     newCategory.save(callback);
 }
 
-module.exports.removeCategory = (categoryId, callback) => {
+module.exports.removeCategoryById = (categoryId, callback) => {
     Category.deleteOne({'_id': categoryId}, callback);
+}
+
+module.exports.removeCategoryByName = (categoryName, callback) => {
+    Category.deleteOne({'name': categoryName}, callback);
 }

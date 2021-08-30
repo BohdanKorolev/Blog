@@ -17,13 +17,24 @@ router.post('/add', (request, response) => {
 })
 
 router.post('/remove', (request, response) => {
-    Category.removeCategory(request.body.id, (err, category) => {
-        if (err) {
-            response.json({success: false, msg: 'Category has not been deleted.'});
-        } else {
-            response.json({success: true, msg: 'Category has been deleted.'})
-        }
-    })
+    if (request.body.id) {
+        Category.removeCategoryById(request.body.id, (err, category) => {
+            if (err) {
+                response.json({success: false, msg: 'Category has not been deleted.'});
+            } else {
+                response.json({success: true, msg: 'Category has been deleted.'})
+            }
+        })
+    }
+    else if (request.body.name) {
+        Category.removeCategoryByName(request.body.name, (err, category) => {
+            if (err) {
+                response.json({success: false, msg: 'Category has not been deleted.'});
+            } else {
+                response.json({success: true, msg: 'Category has been deleted.'})
+            }
+        })
+    }
 })
 
 router.get(
