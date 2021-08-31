@@ -7,6 +7,7 @@ const path = require('path');
 const config = require('./configs/db');
 const account = require('./routes/account');
 const category = require('./routes/category');
+const post = require('./routes/post');
 
 const app = express();
 const port = 3000;
@@ -31,6 +32,8 @@ app.use(bodyparser.json());
 app.use('/account', account);
 
 app.use('/category', category);
+
+app.use('/post', post);
 
 app.get('/', (request, response) => {
     response.send('Home page')
