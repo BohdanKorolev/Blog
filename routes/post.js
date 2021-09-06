@@ -3,14 +3,8 @@ const router = express.Router();
 const Post = require('../models/post');
 
 router.post('/add', (request, response) => {
-    let newPost = new Post({
-        categoryId: request.body.post.categoryId,
-        title: request.body.post.title,
-        bannerImg: request.body.post.bannerImg,
-        content: request.body.post.content,
-        author: request.body.post.author,
-        dateTime: request.body.post.dateTime,
-    });
+    let newPost = new Post(request.body.post);
+
     Post.addPost(newPost, (err, category) => {
         if (err) {
             response.json({success: false, msg: 'Post has not been added.'});

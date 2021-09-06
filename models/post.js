@@ -8,7 +8,7 @@ const PostSchema = mongoose.Schema({
         type: String
     },
     bannerImg: {
-        type: String
+        type: Buffer
     },
     content: {
         type: String

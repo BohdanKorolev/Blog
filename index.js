@@ -27,7 +27,7 @@ require('./configs/passport')(passport);
 
 app.use(cors());
 
-app.use(bodyparser.json());
+app.use(bodyparser.json({limit: '50mb'}));
 
 app.use('/account', account);
 
